@@ -90,6 +90,9 @@
 	pre {
 		background-color: darkolivegreen;
 		color: aquamarine;
+		text-wrap: wrap;
+		word-wrap: break-word;
+		hyphens: none;
 	}
 	img {
 		max-width: 20em;
