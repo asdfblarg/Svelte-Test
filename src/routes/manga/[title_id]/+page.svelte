@@ -136,8 +136,7 @@
 							<td style="width: 20%; font-weight: bold; text-align: right;" valign="top"
 								><p>Description:</p></td
 							>
-							<td><SvelteMarkdown {source} />
-								<SvelteMarkdown {source} /><SvelteMarkdown {source} /><SvelteMarkdown {source} /><SvelteMarkdown {source} /><SvelteMarkdown {source} /><SvelteMarkdown {source} /><SvelteMarkdown {source} /><SvelteMarkdown {source} /><SvelteMarkdown {source} /><SvelteMarkdown {source} /><SvelteMarkdown {source} /><SvelteMarkdown {source} /><SvelteMarkdown {source} /></td>
+							<td><SvelteMarkdown {source} /></td>
 						</tr>
 					</tbody>
 				</table>
@@ -152,7 +151,7 @@
 		background-color: white;
 		margin: 2em;
 		max-width: 70%;
-		
+
 	}
 	h1 {
 		font-family: Helvetica, Arial, sans-serif;
