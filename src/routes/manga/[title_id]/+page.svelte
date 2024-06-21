@@ -150,7 +150,8 @@
 		min-height: 85vh;
 		background-color: white;
 		margin: 2em;
-		max-width: 70%;
+		max-width: 80%;
+		min-width: 800px;
 
 	}
 	h1 {

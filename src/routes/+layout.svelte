@@ -22,7 +22,7 @@
 		/* display: inline-block; */
 		display: inline-block;
 		width: 100%;
-		min-width: 1200px;
+		/* min-width: 1200px; */
 	}
 	nav {
 		/* background-color: #e5e6e6; */
