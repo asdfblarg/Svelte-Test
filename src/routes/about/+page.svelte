@@ -1,11 +1,3 @@
-<script>
-	import { goto } from '$app/navigation';
-
-	function handleClick() {
-		goto('/vatoto');
-	}
-</script>
-
 <div class="content-background">
 	<div class="content">
 		<div class="text">Just testing stuff out</div>
