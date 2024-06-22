@@ -15,10 +15,4 @@
 		display: flex;
 		justify-content: center;
 	}
-	.text {
-		font-family: Arial, Helvetica, sans-serif;
-		font-size: xx-large;
-		padding: 1em;
-		text-align: center;
-	}
 </style>
