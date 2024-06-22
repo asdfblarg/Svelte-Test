@@ -2,8 +2,8 @@
 	<nav>
 		<button class="navlogo navbtn">MangaDex Test</button>
 		<button class="navbtn"><a href="/">Home</a></button>
-		<button class="navbtn"><a href="/about">About</a></button>
 		<button class="navbtn"><a href="/vatoto">Vatoto</a></button>
+		<button class="navbtn"><a href="/about">About</a></button>
 	</nav>
 
 	<slot />
@@ -39,9 +39,14 @@
 	}
 	.navlogo {
 		padding: 1em;
+		font-size: 2rem;
 	}
 	nav a {
 		padding: .75em;
+		text-decoration: none;
+		display: inline-block;
+		font-size: 1rem;
+		color: currentColor;
 	}
 	.navbtn {
 		color: #d7dde4;
