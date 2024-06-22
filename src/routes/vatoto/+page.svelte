@@ -1,68 +1,102 @@
 <script>
-	/** @type {import('./$types').PageData} */
-	import SvelteMarkdown from 'svelte-markdown';
+	import {goto} from '$app/navigation';
 
-	export let data;
-	const { jsonResponse } = data;
-	let { id, type, attributes, relationships } = jsonResponse.data;
-	let {
-		title,
-		altTitles,
-		availableTranslatedLanguages,
-		contentRating,
-		description,
-		links,
-		originalLanguage,
-		publicationDemographic,
-		updatedAt,
-		status,
-		tags
-	} = attributes;
+	let uid;
 
-	const relationshipsMap = new Map();
-	relationships.map((relationship) => {
-		relationshipsMap.set(relationship.type, relationship);
-	});
-
-	const relationshipObjList = {};
-	relationships.forEach((relationship) => {
-		if (relationshipObjList[relationship.type]) {
-			relationshipObjList[relationship.type].push(relationship);
-		} else {
-			relationshipObjList[relationship.type] = [relationship];
+	// check if uid is valid for disabling button
+	function isUidValid(uid){
+		if (uid) {
+			let uuidMatch = uid.match(/^([a-f0-9]{8}\b-[a-f0-9]{4}\b-[a-f0-9]{4}\b-[a-f0-9]{4}\b-[a-f0-9]{12})$/i);
+			if (uuidMatch) {
+				return true;
+			}
+			return false;
 		}
-	});
 
-	const tagsList = [];
-	tags.forEach((tag) => {
-		let tagName = (tag.attributes.name.en = Object.values(tag.attributes.name)[0]);
-		tagsList.push(tagName);
-	});
-	tagsList.sort();
+	}
 
-	let defaultTitle = title.en || Object.values(title)[0];
-	let mdUrlSlug = defaultTitle
-		.toLocaleLowerCase()
-		.replace(/[^a-z10-9-]+/g, '-')
-		.replace(/^[\s-]+|[\s-]+$/g, '');
-	let mdTitleUrl = `https://mangadex.org/title/${id}/${mdUrlSlug}`;
-	let coverURL = `https://mangadex.org/covers/${id}/${relationshipsMap.get('cover_art').attributes.fileName}`;
+	// On input paste, parse for uuid and overwite
+	function inputUuidParse(event) {
+	    let pasteText = event.clipboardData.getData("Text")
+	    let uuidMatch = pasteText.match(/([a-f0-9]{8}\b-[a-f0-9]{4}\b-[a-f0-9]{4}\b-[a-f0-9]{4}\b-[a-f0-9]{12})/i);
+	    if (uuidMatch) {
+	        // Overwrite existing input text with uuid
+	        uid = uuidMatch[1];
+			borderStyle = '';
+			borderColor = '';
+	        event.stopPropagation();
+	        event.preventDefault();
+	    }
+	};
 
-	const altTitlesList = [];
-	altTitles.forEach((element) => {
-		for (const [key, value] of Object.entries(element)) {
-			altTitlesList.push(value);
+	let borderColor;
+	let borderStyle;
+	// Change border to red if there is no valid uuid in the input value
+	function inputUuidCheck() {
+		let inputText = uid;
+
+		// Ensure border clears if uuid is valid
+		borderStyle = '';
+		borderColor = '';
+		if (inputText) {
+			let uuidMatch = inputText.match(
+				/([a-f0-9]{8}\b-[a-f0-9]{4}\b-[a-f0-9]{4}\b-[a-f0-9]{4}\b-[a-f0-9]{12})/i
+			);
+			if (!uuidMatch) {
+				// Set border to solid red if input text is not valid uuid
+				borderStyle = 'solid';
+				borderColor = 'red';
+			}
 		}
-	});
+	}
 
-	const defaultDescription = Object.values(description)[0];
-	const source = defaultDescription;
+	function handleClick() {
+		console.log('Redirecting to:', `/manga/${uid}`);
+		goto(`/manga/${uid}`)
+	}
 </script>
 
-<input type="text" />
+<div class="outter-container">
+	<div class="inner-container">
+		<div class="inputText">MangaDex title uid:</div>
+		<div class="input-row">
+			<input
+				class="input"
+				type="text"
+				bind:value={uid}
+				on:input={inputUuidCheck}
+				on:paste={inputUuidParse}
+				style="border-color: {borderColor}; border-style: {borderStyle}"
+			/>
+			<button on:click={handleClick} disabled={!isUidValid(uid)}>Enter</button>
+		</div>
+	</div>
+</div>
 
 <style>
-	input {
-		
+	.outter-container {
+		background-color: white;
+		padding: 15em;
+		margin: 5em;
+		display: flex;
+		justify-content: center;
+	}
+
+	.inner-container {
+		margin: 2em;
+		font-size: medium;
+	}
+
+	.inputText {
+		color: black;
+		white-space: nowrap;
+		font-size: x-large;
+		font-family: Arial, Helvetica, sans-serif;
+		margin-bottom: 0.5em;
+	}
+
+	.input {
+		width: 18rem;
+		margin-bottom: 0.5em;
 	}
 </style>
