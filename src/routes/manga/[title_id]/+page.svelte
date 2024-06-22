@@ -64,7 +64,7 @@
 	<br />
 	<br />
 	<!-- <a href={mdTitleUrl}>MD link</a> -->
-	<h1 style="max-width: 70%; margin-left: 65px">{defaultTitle}</h1>
+	<h1 style="max-width: 70%; margin-left: 60px">{defaultTitle}</h1>
 	<div class="ipsBox" style="max-width: 1200px;">
 		<div style="position: relative; display: flex;">
 			<div style="width: auto;">
@@ -137,7 +137,7 @@
 					</tbody>
 				</table>
 			</div>
-			<div style="width: 300px; text-align: center; padding: 10px;">
+			<div style="width: 300px; text-align: center; padding: 2em;">
 				<img src={coverURL} style="max-width: 280px; max-height: 500px;" alt="" />
 			</div>
 		</div>
@@ -149,7 +149,8 @@
 		min-height: 85vh;
 		background-color: white;
 		margin: 2em;
-		max-width: 80%;
+		width: fit-content;
+		padding: em;
 		min-width: 950px;
 	}
 	h1 {
