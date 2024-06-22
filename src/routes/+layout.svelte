@@ -19,23 +19,16 @@
 		background-image: url('https://vatoto.com/forums/public/style_images/subway/patterns/shattered.png');
 		background-color: rgb(51, 53, 53);
 		min-height: 100vh;
-		/* display: inline-block; */
 		display: inline-block;
 		width: 100%;
-		/* min-width: 1200px; */
 	}
 	nav {
-		/* background-color: #e5e6e6; */
 		display: flex;
 		align-items: center;
-		/* padding: 0.5rem; */
 		min-height: 4rem;
-		/* width: 100%; */
-		/* border-radius: 1em; */
 
 		background-image: url('https://vatoto.com/forums/public/style_images/subway/patterns/shattered.png');
 		background-color: rgb(89, 182, 221);
-		/* overflow: hidden; */
 	}
 	.navlogo {
 		padding: 1em;

@@ -22,7 +22,6 @@
 		justify-content: center;
 	}
 	.text {
-		/* text-align: center; */
 		font-family: Arial, Helvetica, sans-serif;
 		font-size: xx-large;
 		padding: 2em;

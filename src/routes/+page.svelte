@@ -17,12 +17,6 @@
 
 <style>
 	.content-background {
-		/* min-height: 85vh;
-		background-color: white;
-		margin: 2em;
-		width: fit-content;
-		min-width: 950px; */
-
         background-color: white;
 		padding-top: 5em;
 		padding-bottom: 25em;
