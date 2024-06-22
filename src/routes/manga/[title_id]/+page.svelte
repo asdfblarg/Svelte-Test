@@ -60,7 +60,7 @@
 	const source = defaultDescription;
 </script>
 
-<div class="backgroundFront">
+<div class="content-background">
 	<br />
 	<br />
 	<!-- <a href={mdTitleUrl}>MD link</a> -->
@@ -145,12 +145,11 @@
 </div>
 
 <style>
-	.backgroundFront {
+	.content-background {
 		min-height: 85vh;
 		background-color: white;
 		margin: 2em;
 		width: fit-content;
-		padding: em;
 		min-width: 950px;
 	}
 	h1 {
