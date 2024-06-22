@@ -66,11 +66,8 @@
 	<!-- <a href={mdTitleUrl}>MD link</a> -->
 	<h1 style="max-width: 70%; margin-left: 65px">{defaultTitle}</h1>
 	<div class="ipsBox" style="max-width: 1200px;">
-		<div style="position: relative;">
-			<div style="width: 300px; float: right; text-align: center; padding: 10px;">
-				<img src={coverURL} style="max-width: 280px; max-height: 500px;" alt="" />
-			</div>
-			<div style="width: auto; margin-right: 320px;">
+		<div style="position: relative; display: flex;">
+			<div style="width: auto;">
 				<table class="ipb_table" style="width: 100%;" width="100%">
 					<tbody>
 						<tr>
@@ -140,6 +137,9 @@
 					</tbody>
 				</table>
 			</div>
+			<div style="width: 300px; text-align: center; padding: 10px;">
+				<img src={coverURL} style="max-width: 280px; max-height: 500px;" alt="" />
+			</div>
 		</div>
 	</div>
 </div>
@@ -150,7 +150,7 @@
 		background-color: white;
 		margin: 2em;
 		max-width: 80%;
-		min-width: 800px;
+		min-width: 950px;
 	}
 	h1 {
 		font-family: Helvetica, Arial, sans-serif;
