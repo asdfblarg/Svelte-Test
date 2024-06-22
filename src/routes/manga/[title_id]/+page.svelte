@@ -73,10 +73,8 @@
 			<div style="width: auto; margin-right: 320px;">
 				<table class="ipb_table" style="width: 100%;" width="100%">
 					<tbody>
-						<tr class="">
-							<td style="width: 20%; font-weight: bold; text-align: right;" valign="top"
-								>Alt Names:</td
-							>
+						<tr>
+							<td class="td" valign="top">Alt Names:</td>
 							<td>
 								{#each altTitlesList as altTitle}
 									<span style="margin-right: 12px; display: inline-block;">
@@ -89,27 +87,24 @@
 								{/each}
 							</td>
 						</tr>
-						<tr class="">
-							<td style="width: 20%; font-weight: bold; text-align: right;" valign="top">Author:</td
-							>
+						<tr>
+							<td class="td" valign="top">Author:</td>
 							<td>
 								{#each relationshipObjList.author as author}
 									<span>{author.attributes.name}</span>
 								{/each}
 							</td>
 						</tr>
-						<tr class="">
-							<td style="width: 20%; font-weight: bold; text-align: right;" valign="top">Artist:</td
-							>
+						<tr>
+							<td class="td" valign="top">Artist:</td>
 							<td>
 								{#each relationshipObjList.artist as artist}
 									<span>{artist.attributes.name}</span>
 								{/each}
 							</td>
 						</tr>
-						<tr class="">
-							<td style="width: 20%; font-weight: bold; text-align: right;" valign="top">Genres:</td
-							>
+						<tr>
+							<td class="td" valign="top">Genres:</td>
 							<td>
 								{#each tagsList as tag}
 									<span style="margin-right: 12px; display: inline-block;" title="Tag Description">
@@ -122,20 +117,16 @@
 								{/each}
 							</td>
 						</tr>
-						<tr class="">
-							<td style="width: 20%; font-weight: bold; text-align: right;" valign="top">Origin:</td
-							>
+						<tr>
+							<td class="td" valign="top">Origin:</td>
 							<td>{originalLanguage.toLocaleUpperCase()}</td>
 						</tr>
-						<tr class="">
-							<td style="width: 20%; font-weight: bold; text-align: right;" valign="top">Status:</td
-							>
+						<tr>
+							<td class="td" valign="top">Status:</td>
 							<td>{status}</td>
 						</tr>
-						<tr class="">
-							<td style="width: 20%; font-weight: bold; text-align: right;" valign="top"
-								><p>Description:</p></td
-							>
+						<tr>
+							<td class="td" valign="top"><p>Description:</p></td>
 							<td><SvelteMarkdown {source} /></td>
 						</tr>
 						<tr>
@@ -160,7 +151,6 @@
 		margin: 2em;
 		max-width: 80%;
 		min-width: 800px;
-
 	}
 	h1 {
 		font-family: Helvetica, Arial, sans-serif;
@@ -177,6 +167,11 @@
 	}
 	span {
 		color: rgb(51, 51, 51);
+	}
+	.td {
+		width: 20%;
+		font-weight: bold;
+		text-align: right;
 	}
 	.md-url-button {
 		font-size: x-large;
