@@ -4,12 +4,6 @@
 	let numFollows = Object.keys(followsList).length;
 </script>
 
-{#if data.cookies}
-	<form method="POST" action="/logout">
-		<button>log out</button>
-	</form>
-{/if}
-
 <div class="content-background">
 	<div class="content">
 		<div class="text">Follows page</div>
@@ -36,11 +30,6 @@
 		font-size: xx-large;
 		padding: 1em;
         text-align: center;
-	}
-	form {
-		position: fixed;
-		top: 1.5em;
-		right: 1em;
 	}
 	pre {
 		background-color: darkgray;

@@ -1,4 +1,4 @@
-import { redirect } from '@sveltejs/kit';
+import { redirect, error } from '@sveltejs/kit';
 
 export async function load({ cookies, url }) {
 	if (!cookies.get('logged_in')) {
@@ -30,9 +30,11 @@ export async function load({ cookies, url }) {
 				.then(result => { return result })
 				.catch(error => console.log('error', error));
 
-			// if (response.result == 'error') {
-			// 	return fail(400, { username, error: response.errors });
-			// }
+			console.log("response", response)
+
+			if (response.result == 'error') {
+				error(400, "auth refresh failed")
+			}
 
 			cookies.set('session_token', `${response['token']['session']}`, { path: '/follows' });
 			cookies.set('refresh_token', `${response['token']['refresh']}`, { path: '/follows' });
