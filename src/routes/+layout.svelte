@@ -3,6 +3,7 @@
 		<button class="navlogo navbtn">MangaDex Test</button>
 		<button class="navbtn"><a href="/">Home</a></button>
 		<button class="navbtn"><a href="/vatoto">Vatoto</a></button>
+		<button class="navbtn"><a href="/follows">Follows</a></button>
 		<button class="navbtn"><a href="/about">About</a></button>
 	</nav>
 
