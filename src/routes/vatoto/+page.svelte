@@ -76,7 +76,7 @@
 <style>
 	.outter-container {
 		background-color: white;
-		padding: 15em;
+		padding: 12em;
 		margin: 5em;
 		display: flex;
 		justify-content: center;
