@@ -138,6 +138,14 @@
 							>
 							<td><SvelteMarkdown {source} /></td>
 						</tr>
+						<tr>
+							<td
+								style="width: 20%; font-weight: bold; text-align: center; padding:4em;"
+								colspan="2"
+							>
+								<a class="md-url-button" href={mdTitleUrl}>View on MangaDex</a>
+							</td>
+						</tr>
 					</tbody>
 				</table>
 			</div>
@@ -169,5 +177,16 @@
 	}
 	span {
 		color: rgb(51, 51, 51);
+	}
+	.md-url-button {
+		font-size: x-large;
+		border: solid;
+		margin: 5em;
+		padding: 1em;
+		text-decoration: none;
+		color: white;
+		background-color: orange;
+		border-radius: 0.5em;
+		white-space: nowrap;
 	}
 </style>
