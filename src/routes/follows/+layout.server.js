@@ -8,8 +8,6 @@ export async function load({ cookies, url }) {
 		const refresh_token = cookies.get('refresh_token');
 		const expiresAt = cookies.get('expiresAt');
 
-		console.log("cookies", session_token, refresh_token, expiresAt)
-
 		// refresh token
 		if (Date.now() > expiresAt) {
 			const myHeaders = new Headers();
@@ -32,8 +30,6 @@ export async function load({ cookies, url }) {
 				.then(result => { return result })
 				.catch(error => console.log('error', error));
 
-			console.log("refresh:", response);
-
 			// if (response.result == 'error') {
 			// 	return fail(400, { username, error: response.errors });
 			// }
@@ -48,12 +44,7 @@ export async function load({ cookies, url }) {
 				"authorization": `Bearer ${session_token}`,
 			}
 		}).then((response) => { return response.json() })
-		console.log(followsResponse)
 
 		return { cookies: true, followsResponse: followsResponse}
 	}
 }
-
-
-// response = self.send_request(
-// 	"post", "auth/refresh", False, json={"token": self._refresh_token}

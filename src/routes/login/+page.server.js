@@ -27,7 +27,6 @@ export const actions = {
             .then(response => response.json())
             .then(result => { return result })
             .catch(error => console.log('error', error));
-        console.log(response);
 
         if (response.result == 'error') {
             return fail(400, { username, error: response.errors });
