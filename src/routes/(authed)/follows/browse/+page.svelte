@@ -127,9 +127,6 @@
 		padding-top: 1em;
 		padding-bottom: 4em;
 		margin: 5em;
-		/* display: flex; */
-		/* flex-direction: column; */
-		/* justify-content: center; */
 	}
 	.content {
 		max-width: fit-content;
