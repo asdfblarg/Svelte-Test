@@ -35,7 +35,7 @@
 		background-color: darkgray;
 		padding: 1em;
         max-height: 30em;
-        overflow: scroll;
+        overflow: auto;
         width: 100%;
 	}
     p {
